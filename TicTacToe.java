@@ -10,6 +10,8 @@ public class TicTacToe {
     static char [][] userMatrix = new char [3][3];
     static char turn = 'X';
     static int emptyCounter;
+
+
     public static void main(String[] args) {
 
         //Print grid before making a move
@@ -18,7 +20,7 @@ public class TicTacToe {
 
         //Prompt the user to make a move
         do{
-            userMakeAMove();
+            makeAMove();
             whoWins();
             emptyCellCounter();
 
@@ -34,7 +36,8 @@ public class TicTacToe {
         printResult();
     }
 
-    //Converts input string into matrix
+
+    //Creates grid as a matrix
     static char[][] createMatrix( ){
 
         for(int i=0;i<3;i++){
@@ -44,6 +47,7 @@ public class TicTacToe {
         }
         return userMatrix;
     }
+
 
     //Prints matrix as grid
     static void printGrid(){
@@ -62,8 +66,10 @@ public class TicTacToe {
         System.out.println("---------");
     }
 
+
     //Count empty cells
     static void emptyCellCounter(){
+
         emptyCounter=0;
 
         for(int i=0;i<3;i++){
@@ -77,7 +83,7 @@ public class TicTacToe {
 
 
     //Prompt user to make a move
-    static void userMakeAMove(){
+    static void makeAMove(){
 
         boolean flag= true;
 
@@ -107,6 +113,7 @@ public class TicTacToe {
         } while (flag) ;
 
     }
+
 
     //Check who wins
     static void whoWins(){
@@ -149,6 +156,7 @@ public class TicTacToe {
         }
     }
 
+
     //Print results
     static void printResult(){
         if(winnerX){
@@ -159,4 +167,6 @@ public class TicTacToe {
             System.out.println("Draw");
         }
     }
+
+
 }
